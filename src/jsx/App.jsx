@@ -3,7 +3,11 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import '../css/App.css';
 
 const MainContent = () => <div className="MainContent">MainContent</div>;
-const Days = () => <div className="Days">Days</div>;
+const Days = () => {
+  let content = [...Array(31).keys()].map((_, i) => <div key={i}>{i + 1}</div>);
+
+  return <div className="Days"><div className="header">Days</div>{content}</div>
+};
 const AdsDisplay = () => <div className="AdsDisplay">AdsDisplay</div>;
 
 class App extends Component {
