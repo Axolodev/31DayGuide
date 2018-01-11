@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
+
+import Days from './Days';
+import MainContent from './MainContent';
+
 import '../css/App.css';
 
-const MainContent = () => <div className="MainContent">MainContent</div>;
-const Days = () => {
-  let content = [...Array(31).keys()].map((_, i) => <div key={i}>{i + 1}</div>);
-
-  return <div className="Days"><div className="header">Days</div>{content}</div>
-};
 const AdsDisplay = () => <div className="AdsDisplay">AdsDisplay</div>;
 
 class App extends Component {
@@ -16,7 +14,7 @@ class App extends Component {
       <Router>
         <div className="container">
           <MainContent />
-          <Days />
+          <Days count={31}/>
           <AdsDisplay />
         </div>
       </Router>

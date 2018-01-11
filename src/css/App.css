@@ -5,7 +5,7 @@ html, body {
   margin: 0px;
 }
 
-.container > div:not(.Days) {
+.container > div:not(.Days):not(.MainContent) {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -37,8 +37,14 @@ html, body {
 }
 
 .MainContent {
+  padding: 3em;
   grid-column: 1 / 2;
   grid-row: 1 / -1;
+}
+
+.MainContent h2.title {
+  color: #222;
+  text-align: center;
 }
 
 .Days {
@@ -62,7 +68,7 @@ html, body {
 
 }
 
-.Days > div {
+.Days div {
   font-size: 1.1em;
   color: #fafafa;
   height: 100%;
@@ -71,6 +77,11 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.Days > a {
+  color: white;
+  text-decoration: none;
 }
 
 .AdsDisplay {
